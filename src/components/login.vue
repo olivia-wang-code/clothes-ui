@@ -1,11 +1,12 @@
 <template>
     <div class="bg">
-        <el-form :model="ruleForm" status-icon :rules="rules" ref="ruleForm" label-width="100px" class="demo-ruleForm">
+        <el-form :model="ruleForm" status-icon :rules="rules" ref="ruleForm" label-width="120px" class="demo-ruleForm">
+
             <el-form-item label="用户名" prop="Name">
                 <el-input v-model="ruleForm.Name"></el-input>
             </el-form-item>
             <el-form-item label="密码" prop="pass">
-                <el-input  type="password" v-model="ruleForm.pass" autocomplete="off"></el-input>
+                <el-input type="password" v-model="ruleForm.pass" autocomplete="off"></el-input>
             </el-form-item>
             <el-form-item>
                 <el-button type="primary" @click="submitForm('ruleForm')">提交</el-button>
@@ -13,19 +14,24 @@
 
             </el-form-item>
             <el-form-item style="text-align: right">
-                还没有账号？点击<router-link to="/register">注册</router-link>
+                还没有账号？点击
+                <router-link to="/register">注册</router-link>
+                <div>返回
+                    <router-link to="/">
+                    首页
+                    </router-link>
+                </div>
             </el-form-item>
 
         </el-form>
     </div>
 
 
-
 </template>
 
 <script>
     export default {
-        name:'login',
+        name: 'login',
         data() {
             let checkName = (rule, value, callback) => {
                 if (!value) {
@@ -51,10 +57,10 @@
                 },
                 rules: {
                     pass: [
-                        { validator: validatePass, trigger: 'blur' }
+                        {validator: validatePass, trigger: 'blur'}
                     ],
                     Name: [
-                        { validator: checkName, trigger: 'blur' }
+                        {validator: checkName, trigger: 'blur'}
                     ]
                 }
             };
@@ -78,16 +84,23 @@
 </script>
 
 <style scoped>
-    .bg{
+    .img {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .bg {
         background-image: url("/static/image/ds.png");
         background-repeat: no-repeat;
         background-size: cover;
         height: 100vh;
     }
-    .demo-ruleForm{
+
+    .demo-ruleForm {
         width: 20%;
-        position: relative;/*相对位置*/
-        top:25%;
-        left:40%
+        position: relative; /*相对位置*/
+        top: 25%;
+        left: 40%
     }
 </style>

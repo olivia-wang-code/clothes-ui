@@ -1,11 +1,14 @@
 <template>
-<!--    <el-row :gutter="20" type="flex">-->
-<!--        <el-col :span="16"><div class="grid-content bg-purple">淘淘cos租售</div></el-col>-->
-<!--        <el-col :span="8"><div class="grid-content bg-purple"></div></el-col>-->
-<!--    </el-row>-->
+    <!--    <el-row :gutter="20" type="flex">-->
+    <!--        <el-col :span="16"><div class="grid-content bg-purple">淘淘cos租售</div></el-col>-->
+    <!--        <el-col :span="8"><div class="grid-content bg-purple"></div></el-col>-->
+    <!--    </el-row>-->
 
     <div>
+
         <Header></Header>
+
+
         <div class="header">
             <div class="center">
                 <div class="bottom">
@@ -13,28 +16,32 @@
                     <el-button type="primary" class="login0" icon="el-icon-thumb">我要发布</el-button>
                     <el-button type="primary"  icon="el-icon-search">搜索</el-button>
                 </div>
-
+                <el-row style="height:40px;padding: 20px">
+                    <el-button size="mini" round>动漫类</el-button>
+                    <el-button size="mini" round>游戏类</el-button>
+                    <el-button size="mini" round>小说类</el-button>
+                    <el-button size="mini" round>影视剧人物类</el-button>
+                </el-row>
             </div>
         </div>
 
-        <div class="hot" style="font-weight: 900;font-size: 40px">热门推荐</div>
+
+
+
+
         <div class="contain-warp">
-            <div class="contain">
+            <div class="contain" style="padding:25px">
 
-                    <el-card :body-style="{ padding: '0px'}"  style="margin: 10px" v-for="(c, index) in cloths" :key="index" class="item-card">
-                        <div class="item">
-                            <img :src="c.starsUrl" alt="">
-                            {{c.name}} {{c.price}} {{c.desc}}
-                        </div>
+                <el-card :body-style="{ padding: '0px'}"  style="margin: 10px" v-for="(c, index) in cloths" :key="index" class="item-card">
+                    <div class="item">
+                        <img :src="c.starsUrl" alt="">
+                        {{c.name}} {{c.price}} {{c.desc}}
+                    </div>
 
-                    </el-card>
+                </el-card>
             </div>
 
-            <el-card class="box-card">
-                <div v-for="o in type" :key="o" class="text nav-item">
-                    {{'Cos' + o }}
-                </div>
-            </el-card>
+
         </div>
         <div class="page">
             <el-pagination align="center" style="height:60px;padding-top: 20px"
@@ -60,7 +67,6 @@
             </el-footer>
         </el-container>
         <el-backtop style="bottom: 120px">UP</el-backtop>
-
     </div>
 
 </template>
@@ -74,109 +80,105 @@
                 inputQuery:'',
                 type:['动漫类','游戏类','小说类','影视剧人物类'],
                 cloths:[
-                        {
-                            name:'衣服',
-                            price:'100',
-                            desc:'描述',
-                            starsUrl:"./static/image/1.png"
-                        },
-                       {
-                           name:'衣服',
-                           price:'100',
-                           desc:'描述',
-                           starsUrl:"./static/image/2.png"
-                       },
-                       {
-                           name:'衣服',
-                           price:'100',
-                           desc:'描述',
-                           starsUrl:"./static/image/img.png"
-                       },
-                        {
-                            name:'衣服',
-                            price:'100',
-                            desc:'描述',
-                            starsUrl:"./static/image/3.png"
-                        },
-                        {
-                            name:'衣服',
-                            price:'100',
-                            desc:'描述',
-                            starsUrl:"./static/image/1.png"
-                        },
-                        {
-                            name:'衣服',
-                            price:'100',
-                            desc:'描述',
-                            starsUrl:"./static/image/2.png"
-                        },
-                        {
-                            name:'衣服',
-                            price:'100',
-                            desc:'描述',
-                            starsUrl:"./static/image/img.png"
-                        },
-                        {
-                            name:'衣服',
-                            price:'100',
-                            desc:'描述',
-                            starsUrl:"./static/image/3.png"
-                        },
-                        {
-                            name:'衣服',
-                            price:'100',
-                            desc:'描述',
-                            starsUrl:"./static/image/1.png"
-                        },
-                        {
-                            name:'衣服',
-                            price:'100',
-                            desc:'描述',
-                            starsUrl:"./static/image/2.png"
-                        },
-                        {
-                            name:'衣服',
-                            price:'100',
-                            desc:'描述',
-                            starsUrl:"./static/image/img.png"
-                        },
-                        {
-                            name:'衣服',
-                            price:'100',
-                            desc:'描述',
-                            starsUrl:"./static/image/3.png"
-                        },
+                    {
+                        name:'衣服',
+                        price:'100',
+                        desc:'描述',
+                        starsUrl:"./static/image/1.png"
+                    },
+                    {
+                        name:'衣服',
+                        price:'100',
+                        desc:'描述',
+                        starsUrl:"./static/image/2.png"
+                    },
+                    {
+                        name:'衣服',
+                        price:'100',
+                        desc:'描述',
+                        starsUrl:"./static/image/img.png"
+                    },
+                    {
+                        name:'衣服',
+                        price:'100',
+                        desc:'描述',
+                        starsUrl:"./static/image/3.png"
+                    },
+                    {
+                        name:'衣服',
+                        price:'100',
+                        desc:'描述',
+                        starsUrl:"./static/image/1.png"
+                    },
+                    {
+                        name:'衣服',
+                        price:'100',
+                        desc:'描述',
+                        starsUrl:"./static/image/2.png"
+                    },
+                    {
+                        name:'衣服',
+                        price:'100',
+                        desc:'描述',
+                        starsUrl:"./static/image/img.png"
+                    },
+                    {
+                        name:'衣服',
+                        price:'100',
+                        desc:'描述',
+                        starsUrl:"./static/image/3.png"
+                    },
+                    {
+                        name:'衣服',
+                        price:'100',
+                        desc:'描述',
+                        starsUrl:"./static/image/1.png"
+                    },
+                    {
+                        name:'衣服',
+                        price:'100',
+                        desc:'描述',
+                        starsUrl:"./static/image/2.png"
+                    },
+                    {
+                        name:'衣服',
+                        price:'100',
+                        desc:'描述',
+                        starsUrl:"./static/image/img.png"
+                    },
+                    {
+                        name:'衣服',
+                        price:'100',
+                        desc:'描述',
+                        starsUrl:"./static/image/3.png"
+                    },
                 ]
             }
         },
+        methods: {
+            login() {
+                this.$router.push('/login')
+            },
+            register() {
+                this.$router.push('/register')
+            },
+            home(){
+                this.$router.push('/')
+            }
+
+
+        }
     }
 </script>
 <style lang="scss" scoped>
-    .hot{
-        height:80px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-    .text {
-        font-size: 14px;
-    }
+
 
     .item {
         padding: 0;
     }
 
-    .nav-item {
-        cursor: pointer;
-        padding: 5px 0;
-        margin: 22px 0;/*point事件针对padding*/
-    }
 
-    .box-card {
-        width: 200px;
-        background: floralwhite;
-        height:260px;
-    }
+
     .el-aside {
         background-color: floralwhite;
         color: #333;

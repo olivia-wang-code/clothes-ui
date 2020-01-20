@@ -13,6 +13,11 @@
             <el-form-item>
                 <el-button type="primary" @click="submitForm('ruleForm')">提交</el-button>
                 <el-button @click="resetForm('ruleForm')">重置</el-button>
+                <div>返回
+                    <router-link to="/">
+                        首页
+                    </router-link>
+                </div>
             </el-form-item>
         </el-form>
 
